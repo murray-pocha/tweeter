@@ -8,14 +8,14 @@ nav {
   display: flex;               /* use flexbox to align the content */
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;            /* padding adds 1.5em on both left and right */
+  padding: 0 1.5em;            /* padding adds 1.5em on both left and right */
 }
 
 /* style for the <span> element inside <nav> */
 
 nav span {
 font-family: "Bungee", sans-serif;
-font-size: 2rem;
+font-size: 2em;
 }
 
 /* style for the 'write a new tweet' section */
@@ -25,14 +25,14 @@ font-size: 2rem;
   flex-direction: column;
   align-items: flex-end;
   font-family: "Bungee", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   color: #FFFFFF;
   text-align: right;
 }
 
 /* style for the font awesome icon */
 
-.write-tweet i {
-  font-size: 1rem;   /* adjust icon size */
+.nav-tweet-btn i {
+  font-size: 1em;   /* adjust icon size */
   margin-top: 5px;     /* add space between the text and the icon */
 }
