@@ -1,0 +1,39 @@
+/* style for <nav> */
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;               /* use flexbox to align the content */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;            /* padding adds 1.5em on both left and right */
+}
+
+/* style for the <span> element inside <nav> */
+
+nav span {
+font-family: "Bungee", sans-serif;
+font-size: 2rem;
+}
+
+/* style for the 'write a new tweet' section */
+
+.write-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  text-align: right;
+  padding: 0 1.5rem;
+}
+
+/* style for the font awesome icon */
+
+.write-tweet i {
+  font-size: 1rem;   /* adjust icon size */
+  margin-top: 5px;     /* add space between the text and the icon */
+}
