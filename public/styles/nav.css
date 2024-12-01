@@ -22,7 +22,7 @@ font-family: "Bungee", sans-serif;
 font-size: 2em;
 }
 
-nav.right {
+.nav-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -42,8 +42,49 @@ nav.right {
   justify-content: center;
   margin-top: 5px;
 }
-
+ 
 .nav-arrow i {
   font-size: 1em;   /* adjust icon size */
   margin-top: 5px;     /* add space between the text and the icon */
+}
+
+/* center the content inside the header*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* center items horizontally */
+  justify-content: center;  /* align items vertically if needed */
+  text-align: center;       /* center text inside */
+  margin-top: 20px;         /* add space from navbar*/
+}
+
+/* style for the image to make sure it doesnt exceed the container width*/
+header img {
+  max-width: 100%;  /* ensures image does not overflow*/
+  height: auto;     /* maintains aspect ratio*/
+}
+
+header h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 10px;  /* space between the image and the name*/
+}
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5em;
+  position: fixed;  /* makes the navbar 'fixed' it will always be visible at the top of the screen, even if user scrolls*/
+  top: 0;            /* stick to the top of the viewport */
+  z-index: 1000;     /* ensure its above other elements when scrolling*/
+}
+
+body {
+  padding-top: 120px; /* making sure content doesnt hide behind the navbar*/
 }
