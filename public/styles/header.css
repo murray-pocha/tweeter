@@ -1,0 +1,27 @@
+/* center the content inside the header*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* center items horizontally */
+  justify-content: center;  /* align items vertically if needed */
+  text-align: center;       /* center text inside */
+  margin-top: 20px;         /* add space from navbar*/
+  width: 100%;
+  height: auto;
+}
+
+/* style for the image to make sure it doesnt exceed the container width*/
+header img {
+  display: block;
+  max-width: 100%;  /* ensures image does not overflow*/
+  height: auto;     /* maintains aspect ratio*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: 1em;
+  color: #333;
+  margin-top: 10px;  /* space between the image and the name*/
+}
