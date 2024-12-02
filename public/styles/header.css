@@ -1,27 +1,31 @@
 /* center the content inside the header*/
 header {
+
   display: flex;
   flex-direction: column;
   align-items: center;      /* center items horizontally */
-  justify-content: center;  /* align items vertically if needed */
   text-align: center;       /* center text inside */
   margin-top: 20px;         /* add space from navbar*/
   width: 100%;
-  height: auto;
 }
 
-/* style for the image to make sure it doesnt exceed the container width*/
-header img {
-  display: block;
-  max-width: 100%;  /* ensures image does not overflow*/
-  height: auto;     /* maintains aspect ratio*/
-  margin-left: auto;
-  margin-right: auto;
+/* block for the background image*/
+.header-image {
+
+width: 100%;
+height: 400px;
+background-image: url('/images/profile-hex.png');
+background-size: auto 100%;
+background-position: center;
+background-repeat: no-repeat;
 }
 
-header h2 {
+
+
+.header-text h2 {
+
   font-family: "Bungee", sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   color: #333;
-  margin-top: 10px;  /* space between the image and the name*/
+  margin-top: 20px;  /* space between the image and the name*/
 }
