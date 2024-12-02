@@ -21,6 +21,9 @@ body {
   font-family: 'Source sans 3', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* styling for <main>*/
+main {
+  width: 90%;     /* set width 90% of parent*/
+  margin: 0 auto; /* center align horizontally*/
+  background-color: inherit; /* same background colour as <body>*/
+}
