@@ -51,8 +51,3 @@ font-size: 2em;
   font-size: 1em;   /* adjust icon size */
   margin-top: 5px;     /* add space between the text and the icon */
 }
-
-
-body {
-  padding-top: 120px; /* making sure content doesnt hide behind the navbar*/
-}
