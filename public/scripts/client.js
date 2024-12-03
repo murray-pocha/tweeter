@@ -83,8 +83,15 @@ $(document).ready(function() {
     const $textarea = $(this).find("#tweet-text");
     const tweetText = $textarea.val().trim();
 
+    $("#error-message").removeClass("visible").text("");
+
+    if (!tweetText) {
+      alert("🛑 Tweet cannot be empty!");
+      return;
+    }
+
     if (tweetText.length > 140) {
-      alert("Tweet exceeds the 140 character limit!");
+      alert("🤔Tweet exceeds the 140 character limit!");
       return;
     }
 
@@ -92,12 +99,12 @@ $(document).ready(function() {
       url: "/tweets",
       method: "POST",
       data: $(this).serialize(),
-      success: function () {
-        $textarea.val("");
-        $(".counter").text(140);
-        loadTweets();
+      success: function() {
+        $textarea.val("");       // clear the textarea
+        $(".counter").text(140); // reset char counter
+        loadTweets();            // reload tweets to include new one
       },
-      error: function (err) {
+      error: function(err) {
         console.error("Error posting tweet:", err);
       }
     });
