@@ -58,3 +58,9 @@
   font-size: 1em;
   color: #888;
 }
+
+/* change color to red when over limit*/
+.new-tweet .counter.over-limit {
+  color: red;
+  font-weight: bold;
+}
