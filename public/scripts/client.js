@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+console.log("client.js is loaded and running");
 // prevents malicious input(XSS)
 const escapeHTML = (str) => {
   const div = document.createElement("div");
@@ -73,6 +73,21 @@ const loadTweets = () => {
 };
 
 $(document).ready(function() {
+  console.log("DOM is ready.");
+  console.log("Error message container exists:", $("#error-message").length > 0);
+  // hide the error message on manual close
+  if ($("#error-text").length === 0) {
+    console.error("#error-text span is missing. Adding it dynamically.");
+    $("#error-message").prepend('<span id="error-text"></span>');
+
+  }
+
+  // Hide the error message on manual close
+  $("#close-error").on("click", function() {
+    $("#error-message").slideUp();
+  });
+
+
   //load tweets on page load
   loadTweets();
 
@@ -80,19 +95,28 @@ $(document).ready(function() {
   $(".new-tweet form").on("submit", function(event) {
     event.preventDefault();
 
+    // hide the error message initially
+    $("#error-message").slideUp();
+    $("#error-message").removeClass("hidden").find("#error-text").text("");
+
+    // Log the current state of #error-message after clearing it
+    console.log("After clearing error message:", $("#error-message").html());
+
+
+
     const $textarea = $(this).find("#tweet-text");
     const tweetText = $textarea.val().trim();
 
-    $("#error-message").removeClass("visible").text("");
+
 
     if (!tweetText) {
-      alert("🛑 Tweet cannot be empty!");
+      showError("🛑 Tweet cannot be empty!");
       return;
     }
 
     if (tweetText.length > 140) {
-      alert("🤔Tweet exceeds the 140 character limit!");
-      return;
+      showError("🤔Tweet exceeds the 140 character limit!");
+      return; // exit function after showing error
     }
 
     $.ajax({
@@ -105,8 +129,24 @@ $(document).ready(function() {
         loadTweets();            // reload tweets to include new one
       },
       error: function(err) {
+        showError("An error occurred while posting your tweet. Please try again.");
         console.error("Error posting tweet:", err);
       }
     });
   });
+
+  const showError = (message) => {
+    console.log("showError called with message:", message);
+
+    const errorTextElement = $("#error-text"); // Select the element
+    console.log("Error text element exists:", errorTextElement.length > 0); // Log if it exists
+
+    if (errorTextElement.length === 0) {
+      console.error("Error: #error-text not found in the DOM!");
+    } else {
+      errorTextElement.text(message); // Add the error message
+      console.log("After adding text:", errorTextElement.html());
+      $("#error-message").removeClass("hidden").slideDown(); // Show the error message
+    }
+  };
 });
