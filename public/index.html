@@ -64,7 +64,12 @@
 
     <!-- form section-->
     <section class="new-tweet">
-      <div id="error-message" class="hidden"></div>
+
+      <div id="error-message" class="hidden">
+      <span id="error-text"></span>
+      <button id="close-error">X</button>
+      </div>
+
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
