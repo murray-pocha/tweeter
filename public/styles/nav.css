@@ -5,25 +5,24 @@ nav {
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
-  display: flex;               /* use flexbox to align the content */
+  display: flex; /* use flexbox to align the content */
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5em;            /* padding adds 1.5em on both left and right */
-  position: fixed;  /* makes the navbar 'fixed' it will always be visible at the top of the screen, even if user scrolls*/
-  top: 0;            /* stick to the top of the viewport */
-  z-index: 1000;     /* ensure its above other elements when scrolling*/
-  }
-  
+  padding: 0 1.5em; /* padding adds 1.5em on both left and right */
+  position: fixed; /* makes the navbar 'fixed' it will always be visible at the top of the screen, even if user scrolls*/
+  top: 0; /* stick to the top of the viewport */
+  z-index: 1000; /* ensure its above other elements when scrolling*/
+}
 
-/* style for the <span> element inside <nav> */
+
 .nav-left {
-  flex: 1;
+  flex: 1; /* push to the left*/
   text-align: left;
 }
 
 .nav-title {
-font-family: "Bungee", sans-serif;
-font-size: 2em;
+  font-family: "Bungee", sans-serif;
+  font-size: 2em;
 }
 
 .nav-right {
@@ -34,7 +33,6 @@ font-size: 2em;
 }
 
 /* style for the 'write a new tweet' section */
-
 .nav-tweet-btn {
   font-family: "Bungee", sans-serif;
   font-size: 1em;
@@ -46,8 +44,26 @@ font-size: 2em;
   justify-content: center;
   margin-top: 5px;
 }
- 
+
 .nav-arrow i {
-  font-size: 1em;   /* adjust icon size */
-  margin-top: 5px;     /* add space between the text and the icon */
+  font-size: 1em;
+  margin-top: 5px; /* add space between the text and the icon */
+}
+
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1em;
+  }
+
+  .nav-right {
+    margin-top: 10px; /* add spacing between title/write new tweet button*/
+    align-items: center; /* center button*/
+    flex-direction: column;
+  }
+
+  .nav-title {
+    font-size: 1.5em;
+  }
 }
