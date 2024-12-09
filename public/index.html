@@ -31,9 +31,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- External timeAgo library to format timestamps-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+
   <!-- App JS -->
-
-
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script src="/scripts/composer-char-counter.js"></script>
 
 </head>
 
@@ -51,47 +52,51 @@
     </div>
   </nav>
 
-  <!-- header-->
-  <header>
-    <div class="header-image"></div> <!-- block for background image-->
-    <div class="header-text">
-      <h2>Your Name</h2>
-    </div>
-  </header>
 
   <!--main container-->
   <main class="container">
+    <div class="main-layout">
+      <!-- Profile Section -->
+      <section class="profile-section">
+        <header>
+          <div class="header-image"></div> <!-- block for background image-->
+          <div class="header-text">
+            <h2>Your Name</h2>
+          </div>
+        </header>
+      </section>
 
-    <!-- form section-->
-    <section class="new-tweet">
+      <!-- Tweets Section -->
+      <section class="tweets-container">
 
-      <div id="error-message" class="hidden">
-      <span id="error-text"></span>
-      <button id="close-error">X</button>
-      </div>
+        <!-- form section-->
+        <section class="new-tweet">
+          <div id="error-message" class="hidden">
+            <span id="error-text"></span>
+            <button id="close-error">X</button>
+          </div>
 
-      <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder="What's happening?"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text" aria-live="polite">140</output>
+
+          <form action="/tweets" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" placeholder="What's happening?"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text" aria-live="polite">140</output>
+            </div>
+          </form>
+        </section>
+        <h2>Latest Tweets</h2>
+        <div id="tweets-list">
+          <!-- Tweets will be added here -->
         </div>
-      </form>
-    </section>
-
-    <!-- tweets section-->
-    <section class="tweets-container">
-      <!-- tweets will be added here-->
-      <h2>Latest Tweets</h2>
-      <div id="tweets-list">
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script src="/scripts/composer-char-counter.js"></script>
+
+
+
 </body>
 
 </html>
