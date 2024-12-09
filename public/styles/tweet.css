@@ -8,7 +8,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Tweet header */
 .tweet-header {
   display: flex;
   align-items: center;
@@ -39,7 +38,6 @@
   margin: 0;
 }
 
-/* Tweet body */
 .tweet-body {
   font-size: 1em;
   color: #333;
@@ -47,7 +45,6 @@
   line-height: 1.5;
 }
 
-/* Tweet footer */
 .tweet-footer {
   display: flex;
   justify-content: space-between;
@@ -67,4 +64,13 @@
 
 .tweet-actions i:hover {
   color: #1d72b8;
+}
+
+/* desktop layout for tweets container*/
+@media (min-width: 1025px) {
+  .tweets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
 }
