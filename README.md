@@ -7,7 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 ##Screenshots
 
 ### Screenshot 1: Home Page
-![Home Page](docs/Screenshot_2024-12-09_211355.png "Home Page")
+![Home Page](docs/Screenshot 2024-12-09 211355.png "Home Page")
 ### Screenshot 2: Tweet View
 ![Tweet View](docs/Screenshot_2024-12-09_211418.png "Tweet View")
 ### Screenshot 3: Responsive Design
