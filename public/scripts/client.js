@@ -3,7 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-console.log("client.js is loaded and running");
+
+/* global timeago */
+/* global $ */
+/* eslint-disable no-undef */
+
+
+
 // prevents malicious input(XSS)
 const escapeHTML = (str) => {
   const div = document.createElement("div");
@@ -14,11 +20,8 @@ const escapeHTML = (str) => {
 
 // function to create a tweet element
 const createTweetElement = (tweet) => {
-  //deconstruct tweet object to extract necessary fields
-  const { user, content, created_at } = tweet;
-
-  //format the timestamp
-  const timeSince = timeago.format(created_at);
+  const { user, content, createdAt } = tweet; //deconstruct tweet object to extract necessary fields
+  const timeSince = timeago.format(createdAt); //format the timestamp
 
   //construct the HTML structure for the tweet
   const tweetHTML = `
@@ -46,8 +49,8 @@ const createTweetElement = (tweet) => {
 </article>
      `;
 
-  // return the HTML wrapped in a jQuery object for DOM manipulation
-  return $(tweetHTML);
+
+  return $(tweetHTML); // return the HTML wrapped in a jQuery object for DOM manipulation
 };
 
 //function to render multiple tweets at once
@@ -72,42 +75,16 @@ const loadTweets = () => {
   });
 };
 
+
 $(document).ready(function() {
   console.log("DOM is ready.");
-  console.log("Error message container exists:", $("#error-message").length > 0);
-  // hide the error message on manual close
-  if ($("#error-text").length === 0) {
-    console.error("#error-text span is missing. Adding it dynamically.");
-    $("#error-message").prepend('<span id="error-text"></span>');
-
-  }
-
-  // Hide the error message on manual close
-  $("#close-error").on("click", function() {
-    $("#error-message").slideUp();
-  });
-
-
-  //load tweets on page load
-  loadTweets();
 
   // handle tweet submission / posts a new tweet and reloads tweets list
   $(".new-tweet form").on("submit", function(event) {
     event.preventDefault();
 
-    // hide the error message initially
-    $("#error-message").slideUp();
-    $("#error-message").removeClass("hidden").find("#error-text").text("");
-
-    // Log the current state of #error-message after clearing it
-    console.log("After clearing error message:", $("#error-message").html());
-
-
-
     const $textarea = $(this).find("#tweet-text");
     const tweetText = $textarea.val().trim();
-
-
 
     if (!tweetText) {
       showError("🛑 Tweet cannot be empty!");
@@ -118,6 +95,30 @@ $(document).ready(function() {
       showError("🤔Tweet exceeds the 140 character limit!");
       return; // exit function after showing error
     }
+
+
+    console.log("Error message container exists:", $("#error-message").length > 0);
+    // hide the error message on manual close
+    if ($("#error-text").length === 0) {
+      $("#error-message").prepend('<span id="error-text"></span>');
+
+    }
+
+    // Hide the error message on manual close
+    $("#close-error").on("click", function() {
+      $("#error-message").slideUp();
+    });
+
+
+
+
+    // hide the error message initially
+    $("#error-message").slideUp();
+    $("#error-message").removeClass("hidden").find("#error-text").text("");
+
+    // Log the current state of #error-message after clearing it
+    console.log("After clearing error message:", $("#error-message").html());
+
 
     $.ajax({
       url: "/tweets",
@@ -133,6 +134,9 @@ $(document).ready(function() {
         console.error("Error posting tweet:", err);
       }
     });
+
+    //load tweets on page load
+    loadTweets();
   });
 
   const showError = (message) => {
