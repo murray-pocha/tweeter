@@ -7,13 +7,13 @@ This repository is the starter code for the project: Students will fork and clon
 ##Screenshots
 
 ### Screenshot 1: Home Page
-![Home Page](docs/Screenshot 2024-12-09 211355.png "Home Page")
+![Home Page](murray-pocha/tweeter/blob/master/docs/Screenshot%202024-12-09%20211355.png"Home Page")
 ### Screenshot 2: Tweet View
 ![Tweet View](docs/Screenshot_2024-12-09_211418.png "Tweet View")
 ### Screenshot 3: Responsive Design
 ![Responsive Design](docs/Screenshot_2024-12-09_211450.png "Responsive Design")
 
-
+https://github.com/murray-pocha/tweeter/blob/master/docs/Screenshot%202024-12-09%20211355.png
 
 
 ## Getting Started
