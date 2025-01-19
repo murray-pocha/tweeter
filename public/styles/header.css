@@ -1,0 +1,45 @@
+/* center the content inside the header*/
+header {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center items horizontally */
+  text-align: center; /* center text inside */
+  margin-top: 20px; /* add space from navbar*/
+  width: 100%;
+  height: 400px;
+}
+
+/* block for the background image*/
+.header-image {
+  width: 100%;
+  height: 400px;
+  background-image: url('/images/profile-hex.png');
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-text h2 {
+  font-family: "Bungee", sans-serif;
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* mobile adjustments*/
+@media (max-width: 767px) {
+  header {
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-image {
+    height: 150px;
+    background-size: contain; /* ensures the image scales well*/
+  }
+
+  .header-text h2 {
+    font-size: 1.2em; /* adjust font size for mobile*/
+  }
+}

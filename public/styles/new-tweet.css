@@ -1,0 +1,114 @@
+/* center the form*/
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.new-tweet label {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.new-tweet textarea {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+/*  style the button*/
+.new-tweet button {
+  background-color: #1d72b8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-tweet button:hover {
+  background-color: #155a8a;
+}
+
+/* style the character counter*/
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.new-tweet .counter {
+  font-size: 1em;
+  color: #888;
+}
+
+/* change color to red when over limit*/
+.new-tweet .counter.over-limit {
+  color: red;
+  font-weight: bold;
+}
+
+#error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  display: none;
+}
+
+#error-message.visible {
+  display: block;
+  /* show when error occurs*/
+}
+
+#error-message button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #721c24;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#error-message button:hover {
+  color: #501212;
+}
+
+@media (max-width: 767px) {
+  .new-tweet {
+    max-width: 90%; /* adjust for small screens*/
+    padding: 15px;
+  }
+
+  textarea {
+    min-height: 60px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .counter {
+    font-size: 0.8em; /* makes char count smaller*/
+  }
+}

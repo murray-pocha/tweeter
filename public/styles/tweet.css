@@ -1,0 +1,96 @@
+.tweet {
+  border: 2px solid #403a36;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow by default*/
+  transition: box-shadow 0.3 ease, transform 0.3s ease; /* smooth transition*/
+}
+
+/* add hover effect */
+.tweet:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
+  transform: translateY(-5px); /* lift the tweet */
+}
+
+/* Header of the tweet */
+.tweet-header {
+  display: flex; /* Arrange items horizontally */
+  align-items: center; /* Vertically align avatar, username, and handle */
+  justify-content: space-between; /* Push handle to the far right */
+  gap: 10px; /* Add spacing between avatar and username */
+}
+
+
+/* Avatar styling */
+.tweet-avatar {
+  margin-right: 15px;
+}
+
+.tweet-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Username and handle container */
+.tweet-user-container {
+  display: flex;
+  justify-content: center; /* Space between username and handle */
+  flex-direction: column;
+}
+
+/* Username styling */
+.tweet-username {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 15px;
+  color: #333;
+}
+
+/* Handle styling */
+.tweet-handle {
+  font-size: 0.9em;
+  color: #666;
+  text-align: right;
+}
+
+/* Body of the tweet */
+.tweet-body {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Footer of the tweet */
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 2px solid #403a36;
+  padding-top: 10px;
+}
+
+.tweet-actions i {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.tweet-actions i:hover {
+  color: #1d72b8;
+}
+
+/* Desktop layout for tweets container */
+@media (min-width: 1025px) {
+  .tweets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+}
