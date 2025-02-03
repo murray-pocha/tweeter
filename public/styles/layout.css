@@ -1,154 +1,70 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+/* Global Layout */
 html {
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source sans 3', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   padding-top: 120px;
 }
 
-/* styling for <main>*/
 main {
   width: 90%;
   margin: 0 auto;
-  background-color: inherit;  /* same background colour as <body>*/
+  background-color: inherit;
 }
 
-
-/* adjust the header*/
-@media (max-width: 767px) {
-  nav {
+/* Mobile Layout: Single Column */
+@media (max-width: 1024px) {
+  .main-layout {
+    display: flex;
     flex-direction: column;
-    padding: 1em;
+    align-items: center;
   }
-
-  header {
-    height: auto;
-    padding: 15px;
-  }
-
-  .header-image {
-    height: 150px;
-    background-size: contain;  /* make sure the background image fits well*/
-  }
-
-  .header-text h2 {
-    font-size: 1em; /* reduce font size*/
-  }
-
-  .new-tweet {
-    width: 95%;
-    margin: 10px auto;
-    padding: 15px;
-  }
-
-  .tweets-container {
-    padding: 10px;
-  }
-
-  .nav-title {
-    font-size: 1.5em;
-  }
-}
-
-
-/* adjust header, nav, and main content for tablet*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  main {
-    max-width: 90%;
-  }
-
-  header {
-    height: 300px;
-  }
-
-  .new-tweet {
-    max-width: 80%;
-    /* adjust form width*/
-  }
-
-  .tweets-container {
-    padding: 0 20px;
-    /* add padding for reliability*/
-  }
-}
-
-
-/* desktop styles*/
-@media (min-width: 1025px) {
-  /* center aligh the main content*/
-  main {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  header {
-    height: 400px; /* keep header full height for desktop*/
-    padding: 20px;
-  }
-
-  nav {
-    padding: 0 3em;
-    /* increase padding for desktop*/
-  }
-
-  .new-tweet {
-    max-width: 100%;
+  
+  .profile-section {
+    width: 100%;
+    text-align: center;
     margin-bottom: 20px;
   }
-
+  
   .tweets-container {
-    padding: 0 40px;
-    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
   }
+}
 
+/* Desktop Layout: Two Columns */
+@media (min-width: 1025px) {
   .main-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;  /* Profile section left, tweets right */
+    grid-template-columns: 300px 1fr; /* Profile on left, tweets on right */
     gap: 20px;
     align-items: start;
+    max-width: 1200px;
+    border: 3px solid red;
   }
 
   .profile-section {
     grid-column: 1;
-    /* Place the profile section in the first column */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border: 3px solid blue;
   }
 
-  .profile-section .header-image {
-    max-width: 200px;
-    margin-bottom: 20px;
+  .tweets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 3px solid orange;
   }
-
-  .profile-section .header-text h2 {
-    font-size: 1.8em;
-}
-
-.tweets-container {
-  grid-column: 2; /* Place the tweets section in the second column */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
- }
 }

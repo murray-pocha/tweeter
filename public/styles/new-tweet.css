@@ -1,14 +1,11 @@
+
 /* center the form*/
 .new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
+  background: none; 
+  border: none;
+  padding: 0;
+  max-width: 100%;
+  margin-bottom: 20px;
 }
 
 .new-tweet label {
@@ -20,24 +17,28 @@
 
 .new-tweet textarea {
   width: 100%;
-  min-height: 80px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
+  min-height: 40px; 
+  border: none; 
+  border-bottom: 3px solid #403a36; /* Just a bottom border */
+  border-radius: 0; /* Remove rounded corners */
+  padding: 0px 5px 0px 5px; /* Remove top padding completely */
   font-size: 1em;
-  margin-bottom: 15px;
+  outline: none; /* Remove default browser outline */
+  background-color: #f4f1ec;
+  line-height: 1; /* Keep text height tight */
+  position: relative;
+  top: 5px; /* Move the text down */
 }
 
 /*  style the button*/
 .new-tweet button {
-  background-color: #1d72b8;
+  background-color: #4056A1;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1em;
+  padding: 5px 10px;
+  font-size: 0.8em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .new-tweet button:hover {
@@ -49,12 +50,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  padding-top: 5px;
 }
 
 .new-tweet .counter {
   font-size: 1em;
-  color: #888;
+  color: #403a36;
+  font-weight: bold;
 }
 
 /* change color to red when over limit*/

@@ -33,10 +33,10 @@ const createTweetElement = (tweet) => {
         <div class="tweet-avatar">
           <img src="${user.avatars || 'https://via.placeholder.com/50'}" alt="Avatar of ${user.name || "Anonymous"}">
         </div>
-        <div class="tweet-user-info">
-          <p class="tweet-username">${user.name || "Anonymous"}</p>
-          <p class="tweet-handle">${user.handle || "@anonymous"}</p>
-        </div>
+       
+          <span class="tweet-username">${user.name || "Anonymous"} </span>
+          <span class="tweet-handle">${user.handle || "@anonymous"} </span>
+       
       </header>
       <main class="tweet-body">
         <p>${escapeHTML(content.text)}</p>
@@ -98,7 +98,10 @@ const loadTweets = () => {
       } else {
         console.error("Unexpected response format:", tweets);
       }
-      console.log("Tweets before rendering:", tweets);
+
+
+      const reversedTweets = tweets.reverse();
+      console.log("Tweets after rendering:", tweets);
       renderTweets(tweets);
     },
     error: function(err) {
